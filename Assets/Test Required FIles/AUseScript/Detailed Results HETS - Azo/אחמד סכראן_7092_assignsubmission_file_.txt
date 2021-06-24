@@ -1,0 +1,373 @@
+Compiler version: 64Bit
+
+ID: אחמד סכראן_7092_assignsubmission_file_
+Code path: ..\..\..\Assets\Test Required FIles\AUseScript\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\mtla3.c
+Exe path: ..\..\..\Assets\Test Required FIles\AUseScript\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\Exe\Source.exe
+Code submitted: True
+Exe submitted: True
+Compiler output: 
+Compiled Exe path: ..\..\..\Assets\Test Required FIles\AUseScript\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\mtla3.exe
+
+
+
+***********Submitted .exe results:
+****Input:
+
+9 5
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+**Correct Output
+
+****Input:
+
+7 3
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+1 9
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 8
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 8
+
+
+**Correct Output
+
+****Input:
+
+3 2
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 1
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+3 3
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 0
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+9 0
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 9
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+9 1
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 8
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+9 2
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+**Correct Output
+
+****Input:
+
+9 3
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 6
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+9 4
+
+****Suppoesd output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 5
+
+
+**Correct Output (is TNC)
+
+
+
+***********Compiled .exe results:
+****Input:
+
+9 5
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+7 3
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+1 9
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 8
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 2
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+3 3
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 2
+
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+9 0
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+9 1
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+9 2
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+9 3
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+9 4
+
+****Supposed output:
+
+enter 2 chars seperated by space:
+your char diff is: 7
+
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+
+Overall success rate of: 80.0% with POSSIBLE CHEATING!
+

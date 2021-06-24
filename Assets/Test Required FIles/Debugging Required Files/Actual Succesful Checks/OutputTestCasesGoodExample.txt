@@ -1,0 +1,20 @@
+__[TC]
+enter 2 chars seperated by space:
+your char diff is: 4
+
+__[TNC]
+enter 2 chars seperated by space:
+your char diff is: 2
+
+__[TNC]
+enter 2 chars seperated by space:
+your char diff is: 2
+
+__[TC] 19
+enter 2 chars seperated by space:
+your char diff is: 7
+
+__[TC] bla bla
+enter 2 chars seperated by space:
+your char diff is: 8
+

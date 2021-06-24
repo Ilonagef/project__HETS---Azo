@@ -1,0 +1,189 @@
+Compiler version: 64Bit
+
+ID: אחמד סכראן_7092_assignsubmission_file_
+Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\mtla3.c
+Exe path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\Exe\Source.exe
+Code submitted: True
+Exe submitted: True
+Compiler output: No errors or warnings detected.
+Compiled Exe path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\mtla3.exe
+
+
+
+***********Submitted .exe results:
+****Input:
+
+9 5
+
+****Suppoesd output:
+
+1
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 4
+1
+10
+
+****Suppoesd output:
+
+2
+1
+10
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 1
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+7 3
+
+****Suppoesd output:
+
+3
+
+****Actual output:
+
+enter 2 chars seperated by space:
+your char diff is: 4
+
+
+**Correct Output (is TNC)
+
+****Input:
+
+
+
+****Suppoesd output:
+
+
+
+****Actual output:
+
+enter 2 chars seperated by space:
+The chars must be seperated by a comma!
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+75
+
+****Suppoesd output:
+
+4
+
+****Actual output:
+
+enter 2 chars seperated by space:
+The chars must be seperated by a comma!
+
+
+**Wrong Output!
+
+
+
+
+
+***********Compiled .exe results:
+****Input:
+
+9 5
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 4
+1
+10
+
+****Supposed output:
+
+2
+1
+10
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+7 3
+
+****Supposed output:
+
+3
+
+****Actual output:
+
+Timed out!
+
+**Correct Output (is TNC)
+
+****Input:
+
+
+
+****Supposed output:
+
+
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+****Input:
+
+75
+
+****Supposed output:
+
+4
+
+****Actual output:
+
+Timed out!
+
+**Wrong Output!
+
+
+
+
+Overall success rate of: 40.0% with POSSIBLE CHEATING!
+

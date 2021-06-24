@@ -1,0 +1,14 @@
+Compiler version: 64Bit
+
+ID: איימן שפסו_7085_assignsubmission_file_
+Code path: ..\..\..\Assets\Test Required FIles\AUseScript\Codes To Check\איימן שפסו_7085_assignsubmission_file_\Q3 .c
+Exe path: 
+Code submitted: True
+Exe submitted: False
+Compiler output: tcc: error: file 'Q3' not found
+
+Compiled Exe path: 
+
+No results.
+Overall success rate of: 0%
+

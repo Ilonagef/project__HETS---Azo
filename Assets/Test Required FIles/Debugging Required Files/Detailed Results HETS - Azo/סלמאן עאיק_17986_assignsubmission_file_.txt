@@ -1,0 +1,14 @@
+Compiler version: 64Bit
+
+ID: סלמאן עאיק_17986_assignsubmission_file_
+Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\סלמאן עאיק_17986_assignsubmission_file_\hm(3).c
+Exe path: 
+Code submitted: True
+Exe submitted: False
+Compiler output: hm(3).c:1: error: ';' expected (got "ayiq")
+
+Compiled Exe path: 
+
+No results.
+Overall success rate of: 0%
+

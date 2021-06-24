@@ -1,0 +1,14 @@
+Compiler version: 64Bit
+
+ID: ויקטוריה ציפין_7096_assignsubmission_file_
+Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\ויקטוריה ציפין_7096_assignsubmission_file_\ בית 3 - ויקטוריה ציפין 313696437.c
+Exe path: 
+Code submitted: True
+Exe submitted: False
+Compiler output: tcc: error: file 'בית' not found
+
+Compiled Exe path: 
+
+No results.
+Overall success rate of: 0%
+

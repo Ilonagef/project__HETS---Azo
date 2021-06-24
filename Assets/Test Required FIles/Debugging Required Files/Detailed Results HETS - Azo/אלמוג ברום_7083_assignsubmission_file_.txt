@@ -1,0 +1,14 @@
+Compiler version: 64Bit
+
+ID: אלמוג ברום_7083_assignsubmission_file_
+Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\אלמוג ברום_7083_assignsubmission_file_\ תרגיל 3.c
+Exe path: 
+Code submitted: True
+Exe submitted: False
+Compiler output: tcc: error: file 'תרגיל' not found
+
+Compiled Exe path: 
+
+No results.
+Overall success rate of: 0%
+

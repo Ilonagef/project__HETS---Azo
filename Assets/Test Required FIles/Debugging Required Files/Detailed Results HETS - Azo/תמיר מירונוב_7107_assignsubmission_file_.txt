@@ -1,0 +1,104 @@
+Compiler version: 64Bit
+
+ID: תמיר מירונוב_7107_assignsubmission_file_
+Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\תמיר מירונוב_7107_assignsubmission_file_\Targil5a.c
+Exe path: 
+Code submitted: True
+Exe submitted: True
+Compiler output: Targil5a.c:7: warning: implicit declaration of function 'scanf_s'
+
+Compiled Exe path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\Debugging Required Files\Codes To Check\תמיר מירונוב_7107_assignsubmission_file_\Targil5a.exe
+
+No results.
+
+***********Compiled .exe results:
+****Input:
+
+9 5
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 4
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 4
+1
+10
+
+****Supposed output:
+
+2
+1
+10
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 1
+
+**Correct Output (is TNC)
+
+****Input:
+
+7 3
+
+****Supposed output:
+
+3
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 4
+
+**Correct Output (is TNC)
+
+****Input:
+
+
+
+****Supposed output:
+
+
+
+****Actual output:
+
+Please enter two character with space:
+Error: there is no space between two characters
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+75
+
+****Supposed output:
+
+4
+
+****Actual output:
+
+Please enter two character with space:
+Error: there is no space between two characters
+
+
+**Wrong Output!
+
+
+
+
+Overall success rate of: 40.0%
+

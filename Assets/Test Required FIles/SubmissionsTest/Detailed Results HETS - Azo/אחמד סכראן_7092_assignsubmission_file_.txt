@@ -1,0 +1,13 @@
+Compiler version: 64Bit
+
+ID: אחמד סכראן_7092_assignsubmission_file_
+Code path: ..\..\..\Assets\Test Required FIles\SubmissionsTest\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\mtla3.c
+Exe path: ..\..\..\Assets\Test Required FIles\SubmissionsTest\Codes To Check\אחמד סכראן_7092_assignsubmission_file_\Exe\Source.exe
+Code submitted: True
+Exe submitted: True
+Compiler output: 
+Compiled Exe path: 
+
+No results.
+Overall success rate of: 0%
+
