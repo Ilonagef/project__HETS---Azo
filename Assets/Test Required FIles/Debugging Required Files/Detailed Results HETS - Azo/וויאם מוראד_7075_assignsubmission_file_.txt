@@ -14,7 +14,7 @@ No results.
 ***********Compiled .exe results:
 ****Input:
 
-9 5
+1 9
 
 ****Supposed output:
 
@@ -23,7 +23,98 @@ No results.
 ****Actual output:
 
 Please enter two character with space:
-The diff between two character is: 4
+The diff between two character is: 8
+
+**Wrong Output!
+
+
+
+****Input:
+
+2 9
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 7
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 9
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 6
+
+**Wrong Output!
+
+
+
+****Input:
+
+ 1
+9
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+Error: there is no space between two characters
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+ 2
+9
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+Error: there is no space between two characters
+
+
+**Wrong Output!
+
+
+
+****Input:
+
+ 3
+9
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+Error: there is no space between two characters
+
 
 **Wrong Output!
 
@@ -32,14 +123,31 @@ The diff between two character is: 4
 ****Input:
 
 3 4
-1
+1 0 3
 10
 
 ****Supposed output:
 
-2
 1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 1
+
+**Wrong Output!
+
+
+
+****Input:
+
+3 4
+1 1 3
 10
+
+****Supposed output:
+
+1
 
 ****Actual output:
 
@@ -50,55 +158,91 @@ The diff between two character is: 1
 
 ****Input:
 
-7 3
+3 4
+1 2 3
+10
 
 ****Supposed output:
 
-3
+1
 
 ****Actual output:
 
 Please enter two character with space:
-The diff between two character is: 4
+The diff between two character is: 1
 
 **Correct Output (is TNC)
 
 ****Input:
 
-
+3 4
+1 3 3
+10
 
 ****Supposed output:
 
-
+1
 
 ****Actual output:
 
 Please enter two character with space:
-Error: there is no space between two characters
+The diff between two character is: 1
 
-
-**Wrong Output!
-
-
+**Correct Output (is TNC)
 
 ****Input:
 
-75
+3 4
+1 4 3
+10
 
 ****Supposed output:
 
-4
+1
 
 ****Actual output:
 
 Please enter two character with space:
-Error: there is no space between two characters
+The diff between two character is: 1
 
+**Correct Output (is TNC)
+
+****Input:
+
+3 4
+1 5 3
+10
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 1
+
+**Correct Output (is TNC)
+
+****Input:
+
+3 4
+1 6 3
+10
+
+****Supposed output:
+
+1
+
+****Actual output:
+
+Please enter two character with space:
+The diff between two character is: 1
 
 **Wrong Output!
 
 
 
 
-Overall success rate of: 40.0%
+Overall success rate of: 38.461538461538461538461538460%
 

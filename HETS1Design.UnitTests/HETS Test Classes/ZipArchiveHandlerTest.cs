@@ -31,6 +31,7 @@ namespace HETS1Design
         {
             Submissions.ResetSubmissions();
             TestCases.ResetTestCases();
+            
         }
     }
 }

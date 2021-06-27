@@ -142,9 +142,9 @@ namespace HETS1Design
             countOutput = CountTestCases(outputFileText);
             
             //Check if the input/output files content format is correct before building.
-            if(countInput == countOutput)
+            if(countInput == countOutput)//when the total count  is same in input and output files
             {
-                if(countInput == 0 && countOutput==0)
+                if(countInput == 0 && countOutput==0)//check if the bouth files are empty(no TC and TNC)
                 {
                     throw new Exception("Test cases number in input and output file is empty !");
                 }
@@ -159,7 +159,7 @@ namespace HETS1Design
                         ISTNC = TC_or_TNC(output[i]);
                         if (i == 0)
                         {
-                            if(isTC == false || ISTNC == false)
+                            if(isTC == false || ISTNC == false)/*one/bouth files dont startt with TC*/
                             {
                                 throw new Exception("The test file Must Start with __[TC]");
                             }
@@ -179,26 +179,24 @@ namespace HETS1Design
                     testCases = MultiplyTestCasesByEP(testCases.ToList());
                 }
             }
-            else//when count of inputFile not the same like in outputFile
+            else//when the total count is not same in the bouth of files
             {
-                if(countInput==0 )
+                if(countInput==0 && countOutput != 0)
                 {
-                    if(countOutput != 0)
-                    {
+                    
                         throw new Exception("The number of TC  and TNC in input file is zero.");
-                    }
+                    
                   
                 }
-                else if (countOutput == 0)
+                else if (countInput != 0 && countOutput == 0)
                 {
-                    if (countInput != 0)
-                    {
+                   
                         throw new Exception("The number of TC and TNC in outPut file is zero.");
-                    }
+                    
                 }
                 else if (countInput != countOutput)
                 {
-                    throw new Exception("must be withe the same count");
+                    throw new Exception("must be withe the same total count");
                 }
             }
             

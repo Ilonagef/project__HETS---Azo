@@ -34,32 +34,11 @@ namespace HETS1Design
             //TODO            
         }
 
-        [TestMethod]
-        public void TestCasesBuilder_AddedSuccessfully()
-        {
-            //Arrange
-            var inputFileText = "__[TC]\r\n3 4\r\n__[TC]\r\n35"; 
-            var outputFileTest = "__[TC]\r\n1\r\n__[TC]\r\nWrong input"; 
-            var listSize = 2; //1 test case added
-            //Act
-            TestCases.TestCasesBuilder(inputFileText, outputFileTest);
-            //Assert
-            Assert.AreEqual(listSize, TestCases.testCases.Count);            
-        }
+     
         /*******************************************************************************************/
-        /*new - 1*/
-        [TestMethod]
-        public void TestCasesBuilder_NotEqualTCTNC()
-        {
-            var inputFiletxt = "__[TC]\r\n5 7\r\n__[TNC]\r\n3 4__[TC]\r\n6 4";
-            var outputFiletxt = "__[TC]\r\n2\r\n__[TNC]\r\n1\r\n2";
-            var size = 3;
-            Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFiletxt, outputFiletxt));
-            Assert.AreNotEqual(size, TestCases.testCases.Count);
+       
 
-        }
-
-        /*new - 2*/
+        /*new - 1 -> when the count of TC and TNC in input and output is zero */
         [TestMethod]
         public void TestCasesBuilder_EmptyFile()
         {
@@ -68,8 +47,9 @@ namespace HETS1Design
             Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFiletxt, outputFiletxt));
             Assert.AreEqual(0, TestCases.testCases.Count);
 
+
         }
-        /*new-3*/
+        /*new-2 -> when the count of TC and TNC in input and output files is  same  but the files not start with TC */
         [TestMethod]
         public void TestCasesBuilder_StartWithTC() 
         {
@@ -80,12 +60,56 @@ namespace HETS1Design
             Assert.AreEqual(0, TestCases.testCases.Count);
 
         }
+        /*new 3 - when test case(TC or TNC) on index i in input file not maching to the test case(TC or TNC) on index i in output file (in the same plaace) */
+        [TestMethod]
+        public void TestCasesBuilder_TCandTNCNotMachInFiles()
+        {
+            var inputFiletxt = "__[TC]\r\n5 9\r\n__[TC]\r\n4 3";
+            var outputFiletxt = "__[TC]\r\n4\r\n__[TNC]\r\n1";
+            Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFiletxt, outputFiletxt));
+            Assert.AreNotEqual(2, TestCases.testCases.Count);
+        }
+        /*new 4->when count of TC and TNC in input file is zero */
+        [TestMethod]
+        public void TestCasesBuilder_InputFileEmpty()
+        {
+            
+            var inputFiletxt = "";
+            var outputFiletxt = "__[TC]\r\n4\r\n__[TNC]\r\n1";
+            
+      
+           Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFiletxt, outputFiletxt));
+           Assert.AreEqual(0, TestCases.testCases.Count);
+            
+            
+        }
+        /*new-5->when the count of TC and TNC in outputfile is zero*/
+        [TestMethod]
+        public void TestCasesBuilder_OutputFileEmpty()
+        {
+            var inputFiletxt = "__[TC]\r\n5 9\r\n__[TC]\r\n4 3";
+            var outputFiletxt = "";
+            Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFiletxt, outputFiletxt));
+           Assert.AreEqual(0, TestCases.testCases.Count);
+        }
 
+        [TestMethod]
+        public void TestCasesBuilder_AddedSuccessfully()
+        {
+            //Arrange
+            var inputFileText = "__[TC]\r\n3 4\r\n__[TC]\r\n35";
+            var outputFileTest = "__[TC]\r\n1\r\n__[TC]\r\n";
+            var listSize = 2; //1 test case added
+            //Act
+            TestCases.TestCasesBuilder(inputFileText, outputFileTest);
+            //Assert
+            Assert.AreEqual(listSize, TestCases.testCases.Count);
+        }
 
         [TestMethod]
         public void TestCasesBuilder_NotAddedSuccessfully()
         {
-            TestCases.ResetTestCases();
+            /*TestCases.ResetTestCases();*/
             //Arrange
             var inputFileText = "__[TC]\r\n3 4\r\n__[TC]\r\n35"; 
             var outputFileTest = "__[TC]\r\n1";
@@ -147,6 +171,14 @@ namespace HETS1Design
             Assert.AreEqual("3 4", result);
         }
 
+        /*new*/
+        [TestMethod]
+        public void RemoveTCTNC__inputEmpty()
+        {
+            var testCase = "__[TC]\r\n";
+            var result = TestCases.RemoveTCTNC(testCase);
+            Assert.AreEqual("", result);
+        }
         [TestMethod]
         public void MultiplyTestCasesByBoundary_Multiplies()
         {

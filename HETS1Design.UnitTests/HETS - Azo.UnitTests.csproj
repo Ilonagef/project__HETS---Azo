@@ -60,6 +60,7 @@
     <Compile Include="HETS Test Classes\SingleTestCaseTest.cs" />
     <Compile Include="HETS Test Classes\SubmissionsTest.cs" />
     <Compile Include="HETS Test Classes\TestCasesTest.cs" />
+    <Compile Include="HETS Test Classes\OpenFoldesTest.cs" />
     <Compile Include="HETS Test Classes\ZipArchiveHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HETS Test Classes\MainScreenLogicTest.cs" />
@@ -67,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HETS1Design\HETS - Azo.csproj">

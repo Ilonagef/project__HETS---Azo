@@ -79,7 +79,7 @@
     <Compile Include="HETS Classes\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenFoldes.cs" />
+    <Compile Include="HETS Classes\OpenFoldes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="HETS Classes\MainScreenLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

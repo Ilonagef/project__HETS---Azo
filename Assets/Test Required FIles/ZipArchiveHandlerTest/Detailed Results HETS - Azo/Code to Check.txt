@@ -1,6 +1,6 @@
 Compiler version: 64Bit
 
-ID: אחמד סכראן_7092_assignsubmission_file_
+ID: Code to Check
 Code path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\ZipArchiveHandlerTest\Code to Check\אחמד סכראן_7092_assignsubmission_file_\Targil5a.c
 Exe path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\Test Required FIles\ZipArchiveHandlerTest\Code to Check\אחמד סכראן_7092_assignsubmission_file_\Exe\Source.exe
 Code submitted: True
@@ -18,7 +18,9 @@ Compiled Exe path: D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה
 
 ****Suppoesd output:
 
-1
+enter 2 chars seperated by space:
+your char diff is: 4
+
 
 ****Actual output:
 
@@ -26,21 +28,17 @@ enter 2 chars seperated by space:
 your char diff is: 4
 
 
-**Wrong Output!
-
-
+**Correct Output
 
 ****Input:
 
 3 4
-1
-10
 
 ****Suppoesd output:
 
-2
-1
-10
+enter 2 chars seperated by space:
+your char diff is: 2
+
 
 ****Actual output:
 
@@ -56,7 +54,9 @@ your char diff is: 1
 
 ****Suppoesd output:
 
-3
+enter 2 chars seperated by space:
+your char diff is: 2
+
 
 ****Actual output:
 
@@ -68,34 +68,38 @@ your char diff is: 4
 
 ****Input:
 
-
+9 2
 
 ****Suppoesd output:
 
+enter 2 chars seperated by space:
+your char diff is: 7
 
 
 ****Actual output:
 
 enter 2 chars seperated by space:
-The chars must be seperated by a comma!
+your char diff is: 7
 
 
-**Wrong Output!
-
-
+**Correct Output
 
 ****Input:
 
-75
+1 9
 
 ****Suppoesd output:
 
-4
+
+enter 2 chars seperated by space:
+your char diff is: 8
+_
+
 
 ****Actual output:
 
 enter 2 chars seperated by space:
-The chars must be seperated by a comma!
+your char diff is: 8
 
 
 **Wrong Output!
@@ -111,7 +115,9 @@ The chars must be seperated by a comma!
 
 ****Supposed output:
 
-1
+enter 2 chars seperated by space:
+your char diff is: 4
+
 
 ****Actual output:
 
@@ -125,14 +131,12 @@ The diff between two character is: 4
 ****Input:
 
 3 4
-1
-10
 
 ****Supposed output:
 
-2
-1
-10
+enter 2 chars seperated by space:
+your char diff is: 2
+
 
 ****Actual output:
 
@@ -147,7 +151,9 @@ The diff between two character is: 1
 
 ****Supposed output:
 
-3
+enter 2 chars seperated by space:
+your char diff is: 2
+
 
 ****Actual output:
 
@@ -158,17 +164,18 @@ The diff between two character is: 4
 
 ****Input:
 
-
+9 2
 
 ****Supposed output:
 
+enter 2 chars seperated by space:
+your char diff is: 7
 
 
 ****Actual output:
 
 Please enter two character with space:
-Error: there is no space between two characters
-
+The diff between two character is: 7
 
 **Wrong Output!
 
@@ -176,22 +183,25 @@ Error: there is no space between two characters
 
 ****Input:
 
-75
+1 9
 
 ****Supposed output:
 
-4
+
+enter 2 chars seperated by space:
+your char diff is: 8
+_
+
 
 ****Actual output:
 
 Please enter two character with space:
-Error: there is no space between two characters
-
+The diff between two character is: 8
 
 **Wrong Output!
 
 
 
 
-Overall success rate of: 40.0% with POSSIBLE CHEATING!
+Overall success rate of: 80.0% with POSSIBLE CHEATING!
 
