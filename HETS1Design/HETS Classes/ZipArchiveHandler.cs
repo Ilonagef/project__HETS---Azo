@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 
+
 namespace HETS1Design
 {
     public static class ZipArchiveHandler
@@ -119,7 +120,9 @@ namespace HETS1Design
             {
                 string dirPath = Path.GetFullPath(zipFile);
                 string folderName = "Code to Check";
-                string toFolder = Path.GetDirectoryName(zipFile) + @"\" + folderName;
+                //string toFolder = Path.GetDirectoryName(zipFile) + @"\" + folderName;
+                string toFolder = Path.GetDirectoryName(zipFile) + @"\" + Path.GetFileName(zipFile) + @"\" + folderName;//code to check
+                //string toFolder = 
                 //Makes sure there's no conflict with an existing folder.
                 if (Directory.Exists(toFolder))
                 {
@@ -127,10 +130,68 @@ namespace HETS1Design
                 }
 
                 Directory.CreateDirectory(toFolder); //Creates the folder, this needs the full path.
-                OpenFoldes.ProcessDirectory(dirPath, toFolder);
-
+                ProcessDirectory(dirPath, toFolder);
+                
             }
             
+
+        }
+
+        /*When its not Zip -> open AND add folsers and files*/
+        public static void ProcessDirectory(string dir, string path)
+        {
+            // Process the list of files found in the directory.
+            string[] fileEntries = Directory.GetFiles(dir);
+            foreach (string file in fileEntries)
+            {
+                
+
+                if (Submissions.submissions.Count == 0)  //Assuring we have at least 1 element in the list to use .Last()
+                    Submissions.submissions.Add(new SingleSubmission(dir));
+
+                if (!(dir.Contains(Submissions.submissions.Last().submitID)))
+                    Submissions.submissions.Add(new SingleSubmission(dir));
+
+                if (file.Contains(".c") || file.Contains(".h"))
+                {
+                    string codePath = Path.Combine(path, Path.GetFileName(file));
+                    File.Copy(file, codePath, true);
+                    Submissions.submissions.Last().AddCode(codePath);
+
+                }
+                if (file.Contains(".exe"))
+                {
+                    if (!(Directory.Exists(path + @"\Exe\"))) //If it exists already, it may have more than 1 .exe file.
+                        Directory.CreateDirectory(path + @"\Exe\");
+
+                    string exePath = path + @"\Exe\" + Path.GetFileName(file);
+                    File.Copy(file, exePath, true);
+                    Submissions.submissions.Last().AddExe(exePath);
+                }
+            }
+
+            // Recurse into subdirectories of this directory.
+            string[] subdir = Directory.GetDirectories(dir);
+            foreach (string sub in subdir)
+            {
+                if(!Path.GetFileName(sub).Contains("Code to Check"))
+                {
+                    string newPath = path + @"\" + new DirectoryInfo(sub).Name;
+                    if (!(Directory.Exists(newPath)))
+                    {
+                        Directory.CreateDirectory(newPath);
+                    }
+                    if (Submissions.submissions.Count == 0)  //Assuring we have at least 1 element in the list to use .Last()
+                        Submissions.submissions.Add(new SingleSubmission(newPath));
+
+                    if (!(newPath.Contains(Submissions.submissions.Last().submitID)))
+                        Submissions.submissions.Add(new SingleSubmission(newPath));
+                    ProcessDirectory(sub, newPath);
+                }
+              
+
+                
+            }
 
         }
     }    

@@ -31,9 +31,9 @@ namespace HETS1Design
             if (txtArchivePath.Text == "")
                 return "Choose archive file to continue!";
             if (txtInputPath.Text == "")
-            return "Choose input test case file to continue!";
+                return "Choose input test case file to continue!";
             if (txtOutputPath.Text == "")
-            return "Choose output test case file to continue!";
+               return "Choose output test case file to continue!";
             return "OK";
         }
 

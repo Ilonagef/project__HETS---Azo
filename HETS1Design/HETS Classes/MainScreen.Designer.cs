@@ -39,6 +39,7 @@ namespace HETS1Design
             this.txtArchivePath = new System.Windows.Forms.TextBox();
             this.btnBrowseArchive = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBrowserFolder = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSaveIO = new System.Windows.Forms.Button();
             this.radioTNC = new System.Windows.Forms.RadioButton();
@@ -87,7 +88,6 @@ namespace HETS1Design
             this.btnDetailedResults = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btnBrowserFolder = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,7 +115,7 @@ namespace HETS1Design
             // txtArchivePath
             // 
             this.txtArchivePath.Location = new System.Drawing.Point(211, 20);
-            this.txtArchivePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArchivePath.Margin = new System.Windows.Forms.Padding(4);
             this.txtArchivePath.Name = "txtArchivePath";
             this.txtArchivePath.ReadOnly = true;
             this.txtArchivePath.Size = new System.Drawing.Size(705, 22);
@@ -124,9 +124,9 @@ namespace HETS1Design
             // btnBrowseArchive
             // 
             this.btnBrowseArchive.Location = new System.Drawing.Point(925, 16);
-            this.btnBrowseArchive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseArchive.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseArchive.Name = "btnBrowseArchive";
-            this.btnBrowseArchive.Size = new System.Drawing.Size(100, 28);
+            this.btnBrowseArchive.Size = new System.Drawing.Size(135, 28);
             this.btnBrowseArchive.TabIndex = 3;
             this.btnBrowseArchive.Text = "Browse...";
             this.btnBrowseArchive.UseVisualStyleBackColor = true;
@@ -139,13 +139,23 @@ namespace HETS1Design
             this.groupBox1.Controls.Add(this.btnBrowseArchive);
             this.groupBox1.Controls.Add(this.txtArchivePath);
             this.groupBox1.Location = new System.Drawing.Point(17, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1068, 76);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Files for checking";
+            // 
+            // btnBrowserFolder
+            // 
+            this.btnBrowserFolder.Location = new System.Drawing.Point(928, 46);
+            this.btnBrowserFolder.Name = "btnBrowserFolder";
+            this.btnBrowserFolder.Size = new System.Drawing.Size(133, 30);
+            this.btnBrowserFolder.TabIndex = 4;
+            this.btnBrowserFolder.Text = "Browser-Folder";
+            this.btnBrowserFolder.UseVisualStyleBackColor = true;
+            this.btnBrowserFolder.Click += new System.EventHandler(this.btnBrowserFolder_Click);
             // 
             // groupBox2
             // 
@@ -164,9 +174,9 @@ namespace HETS1Design
             this.groupBox2.Controls.Add(this.txtInputPath);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(17, 84);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1039, 246);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
@@ -176,7 +186,7 @@ namespace HETS1Design
             // 
             this.btnSaveIO.Enabled = false;
             this.btnSaveIO.Location = new System.Drawing.Point(871, 215);
-            this.btnSaveIO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveIO.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveIO.Name = "btnSaveIO";
             this.btnSaveIO.Size = new System.Drawing.Size(155, 28);
             this.btnSaveIO.TabIndex = 13;
@@ -188,7 +198,7 @@ namespace HETS1Design
             // 
             this.radioTNC.AutoSize = true;
             this.radioTNC.Location = new System.Drawing.Point(488, 143);
-            this.radioTNC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioTNC.Margin = new System.Windows.Forms.Padding(4);
             this.radioTNC.Name = "radioTNC";
             this.radioTNC.Size = new System.Drawing.Size(40, 21);
             this.radioTNC.TabIndex = 12;
@@ -201,7 +211,7 @@ namespace HETS1Design
             this.radioTC.AutoSize = true;
             this.radioTC.Checked = true;
             this.radioTC.Location = new System.Drawing.Point(488, 114);
-            this.radioTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioTC.Margin = new System.Windows.Forms.Padding(4);
             this.radioTC.Name = "radioTC";
             this.radioTC.Size = new System.Drawing.Size(37, 21);
             this.radioTC.TabIndex = 11;
@@ -213,7 +223,7 @@ namespace HETS1Design
             // 
             this.txtOutputAppend.BackColor = System.Drawing.SystemColors.Info;
             this.txtOutputAppend.Location = new System.Drawing.Point(533, 78);
-            this.txtOutputAppend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOutputAppend.Margin = new System.Windows.Forms.Padding(4);
             this.txtOutputAppend.Multiline = true;
             this.txtOutputAppend.Name = "txtOutputAppend";
             this.txtOutputAppend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -225,7 +235,7 @@ namespace HETS1Design
             // 
             this.txtInputAppend.BackColor = System.Drawing.SystemColors.Info;
             this.txtInputAppend.Location = new System.Drawing.Point(5, 78);
-            this.txtInputAppend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInputAppend.Margin = new System.Windows.Forms.Padding(4);
             this.txtInputAppend.Multiline = true;
             this.txtInputAppend.Name = "txtInputAppend";
             this.txtInputAppend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -257,7 +267,7 @@ namespace HETS1Design
             // 
             this.btnAddTestCase.Enabled = false;
             this.btnAddTestCase.Location = new System.Drawing.Point(340, 203);
-            this.btnAddTestCase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddTestCase.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTestCase.Name = "btnAddTestCase";
             this.btnAddTestCase.Size = new System.Drawing.Size(312, 28);
             this.btnAddTestCase.TabIndex = 6;
@@ -268,7 +278,7 @@ namespace HETS1Design
             // txtOutputPath
             // 
             this.txtOutputPath.Location = new System.Drawing.Point(611, 21);
-            this.txtOutputPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOutputPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtOutputPath.Name = "txtOutputPath";
             this.txtOutputPath.ReadOnly = true;
             this.txtOutputPath.Size = new System.Drawing.Size(305, 22);
@@ -287,7 +297,7 @@ namespace HETS1Design
             // btnBrowseOutput
             // 
             this.btnBrowseOutput.Location = new System.Drawing.Point(925, 18);
-            this.btnBrowseOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseOutput.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseOutput.Name = "btnBrowseOutput";
             this.btnBrowseOutput.Size = new System.Drawing.Size(100, 28);
             this.btnBrowseOutput.TabIndex = 3;
@@ -298,7 +308,7 @@ namespace HETS1Design
             // btnBrowseInput
             // 
             this.btnBrowseInput.Location = new System.Drawing.Point(399, 18);
-            this.btnBrowseInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseInput.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseInput.Name = "btnBrowseInput";
             this.btnBrowseInput.Size = new System.Drawing.Size(100, 28);
             this.btnBrowseInput.TabIndex = 2;
@@ -309,7 +319,7 @@ namespace HETS1Design
             // txtInputPath
             // 
             this.txtInputPath.Location = new System.Drawing.Point(84, 21);
-            this.txtInputPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInputPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtInputPath.Name = "txtInputPath";
             this.txtInputPath.ReadOnly = true;
             this.txtInputPath.Size = new System.Drawing.Size(305, 22);
@@ -331,9 +341,9 @@ namespace HETS1Design
             this.groupBox3.Controls.Add(this.radioBtnCode);
             this.groupBox3.Controls.Add(this.radioBtnBothExeAndCode);
             this.groupBox3.Location = new System.Drawing.Point(17, 337);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(332, 82);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
@@ -343,7 +353,7 @@ namespace HETS1Design
             // 
             this.radioBtnExecutable.AutoSize = true;
             this.radioBtnExecutable.Location = new System.Drawing.Point(36, 37);
-            this.radioBtnExecutable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioBtnExecutable.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnExecutable.Name = "radioBtnExecutable";
             this.radioBtnExecutable.Size = new System.Drawing.Size(101, 21);
             this.radioBtnExecutable.TabIndex = 5;
@@ -355,7 +365,7 @@ namespace HETS1Design
             // 
             this.radioBtnCode.AutoSize = true;
             this.radioBtnCode.Location = new System.Drawing.Point(149, 37);
-            this.radioBtnCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioBtnCode.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnCode.Name = "radioBtnCode";
             this.radioBtnCode.Size = new System.Drawing.Size(98, 21);
             this.radioBtnCode.TabIndex = 4;
@@ -368,7 +378,7 @@ namespace HETS1Design
             this.radioBtnBothExeAndCode.AutoSize = true;
             this.radioBtnBothExeAndCode.Checked = true;
             this.radioBtnBothExeAndCode.Location = new System.Drawing.Point(261, 37);
-            this.radioBtnBothExeAndCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioBtnBothExeAndCode.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnBothExeAndCode.Name = "radioBtnBothExeAndCode";
             this.radioBtnBothExeAndCode.Size = new System.Drawing.Size(58, 21);
             this.radioBtnBothExeAndCode.TabIndex = 3;
@@ -381,7 +391,7 @@ namespace HETS1Design
             // 
             this.radioButton32BitCompiler.AutoSize = true;
             this.radioButton32BitCompiler.Location = new System.Drawing.Point(148, 39);
-            this.radioButton32BitCompiler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton32BitCompiler.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton32BitCompiler.Name = "radioButton32BitCompiler";
             this.radioButton32BitCompiler.Size = new System.Drawing.Size(110, 21);
             this.radioButton32BitCompiler.TabIndex = 5;
@@ -394,7 +404,7 @@ namespace HETS1Design
             this.radioButton64BitCompiler.AutoSize = true;
             this.radioButton64BitCompiler.Checked = true;
             this.radioButton64BitCompiler.Location = new System.Drawing.Point(27, 39);
-            this.radioButton64BitCompiler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton64BitCompiler.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton64BitCompiler.Name = "radioButton64BitCompiler";
             this.radioButton64BitCompiler.Size = new System.Drawing.Size(110, 21);
             this.radioButton64BitCompiler.TabIndex = 4;
@@ -406,7 +416,7 @@ namespace HETS1Design
             // btnCompile
             // 
             this.btnCompile.Location = new System.Drawing.Point(17, 492);
-            this.btnCompile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCompile.Margin = new System.Windows.Forms.Padding(4);
             this.btnCompile.Name = "btnCompile";
             this.btnCompile.Size = new System.Drawing.Size(213, 37);
             this.btnCompile.TabIndex = 7;
@@ -418,7 +428,7 @@ namespace HETS1Design
             // 
             this.btnResults.Enabled = false;
             this.btnResults.Location = new System.Drawing.Point(564, 492);
-            this.btnResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResults.Margin = new System.Windows.Forms.Padding(4);
             this.btnResults.Name = "btnResults";
             this.btnResults.Size = new System.Drawing.Size(213, 37);
             this.btnResults.TabIndex = 8;
@@ -430,9 +440,9 @@ namespace HETS1Design
             // 
             this.groupBox4.Controls.Add(this.dataGridResults);
             this.groupBox4.Location = new System.Drawing.Point(23, 537);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(1033, 314);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
@@ -443,7 +453,7 @@ namespace HETS1Design
             this.dataGridResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResults.Location = new System.Drawing.Point(4, 19);
-            this.dataGridResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridResults.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridResults.Name = "dataGridResults";
             this.dataGridResults.RowHeadersWidth = 51;
             this.dataGridResults.Size = new System.Drawing.Size(1025, 291);
@@ -452,7 +462,7 @@ namespace HETS1Design
             // btnExportCSV
             // 
             this.btnExportCSV.Location = new System.Drawing.Point(456, 858);
-            this.btnExportCSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportCSV.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportCSV.Name = "btnExportCSV";
             this.btnExportCSV.Size = new System.Drawing.Size(151, 32);
             this.btnExportCSV.TabIndex = 10;
@@ -485,9 +495,9 @@ namespace HETS1Design
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Location = new System.Drawing.Point(17, 431);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(688, 57);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
@@ -496,7 +506,7 @@ namespace HETS1Design
             // 
             this.checkBoxEnableGrading.AutoSize = true;
             this.checkBoxEnableGrading.Location = new System.Drawing.Point(12, -1);
-            this.checkBoxEnableGrading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxEnableGrading.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxEnableGrading.Name = "checkBoxEnableGrading";
             this.checkBoxEnableGrading.Size = new System.Drawing.Size(81, 21);
             this.checkBoxEnableGrading.TabIndex = 10;
@@ -517,7 +527,7 @@ namespace HETS1Design
             // menuResultsWeight
             // 
             this.menuResultsWeight.Location = new System.Drawing.Point(579, 22);
-            this.menuResultsWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuResultsWeight.Margin = new System.Windows.Forms.Padding(4);
             this.menuResultsWeight.Name = "menuResultsWeight";
             this.menuResultsWeight.Size = new System.Drawing.Size(69, 22);
             this.menuResultsWeight.TabIndex = 8;
@@ -556,7 +566,7 @@ namespace HETS1Design
             // menuExeWeight
             // 
             this.menuExeWeight.Location = new System.Drawing.Point(316, 21);
-            this.menuExeWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuExeWeight.Margin = new System.Windows.Forms.Padding(4);
             this.menuExeWeight.Name = "menuExeWeight";
             this.menuExeWeight.Size = new System.Drawing.Size(69, 22);
             this.menuExeWeight.TabIndex = 4;
@@ -565,7 +575,7 @@ namespace HETS1Design
             // menuCodeWeight
             // 
             this.menuCodeWeight.Location = new System.Drawing.Point(68, 21);
-            this.menuCodeWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuCodeWeight.Margin = new System.Windows.Forms.Padding(4);
             this.menuCodeWeight.Name = "menuCodeWeight";
             this.menuCodeWeight.Size = new System.Drawing.Size(69, 22);
             this.menuCodeWeight.TabIndex = 3;
@@ -614,7 +624,7 @@ namespace HETS1Design
             // timeoutNumUpDown
             // 
             this.timeoutNumUpDown.Location = new System.Drawing.Point(245, 36);
-            this.timeoutNumUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timeoutNumUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.timeoutNumUpDown.Maximum = new decimal(new int[] {
             3600,
             0,
@@ -638,7 +648,7 @@ namespace HETS1Design
             // btnRunProgram
             // 
             this.btnRunProgram.Location = new System.Drawing.Point(291, 492);
-            this.btnRunProgram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRunProgram.Margin = new System.Windows.Forms.Padding(4);
             this.btnRunProgram.Name = "btnRunProgram";
             this.btnRunProgram.Size = new System.Drawing.Size(213, 37);
             this.btnRunProgram.TabIndex = 14;
@@ -650,7 +660,7 @@ namespace HETS1Design
             // 
             this.btnDetailedResults.Enabled = false;
             this.btnDetailedResults.Location = new System.Drawing.Point(837, 492);
-            this.btnDetailedResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetailedResults.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetailedResults.Name = "btnDetailedResults";
             this.btnDetailedResults.Size = new System.Drawing.Size(213, 37);
             this.btnDetailedResults.TabIndex = 15;
@@ -663,9 +673,9 @@ namespace HETS1Design
             this.groupBox6.Controls.Add(this.radioButton32BitCompiler);
             this.groupBox6.Controls.Add(this.radioButton64BitCompiler);
             this.groupBox6.Location = new System.Drawing.Point(357, 337);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(277, 82);
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
@@ -677,23 +687,13 @@ namespace HETS1Design
             this.groupBox7.Controls.Add(this.timeoutLabel);
             this.groupBox7.Controls.Add(this.timeoutNumUpDown);
             this.groupBox7.Location = new System.Drawing.Point(643, 337);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(408, 82);
             this.groupBox7.TabIndex = 17;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Timeout:";
-            // 
-            // btnBrowserFolder
-            // 
-            this.btnBrowserFolder.Location = new System.Drawing.Point(928, 46);
-            this.btnBrowserFolder.Name = "btnBrowserFolder";
-            this.btnBrowserFolder.Size = new System.Drawing.Size(97, 30);
-            this.btnBrowserFolder.TabIndex = 4;
-            this.btnBrowserFolder.Text = "Browser";
-            this.btnBrowserFolder.UseVisualStyleBackColor = true;
-            this.btnBrowserFolder.Click += new System.EventHandler(this.btnBrowserFolder_Click);
             // 
             // MainScreen
             // 
@@ -715,7 +715,7 @@ namespace HETS1Design
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainScreen";

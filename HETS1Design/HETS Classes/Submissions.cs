@@ -160,7 +160,7 @@ namespace HETS1Design
         public static void SaveDetailedResults(string zipPath) //We may turn this into the final csv file at some point.
         {
             if (!Directory.Exists(Path.GetDirectoryName(zipPath) + @"\Detailed Results HETS - Azo"))
-            Directory.CreateDirectory(Path.GetDirectoryName(zipPath) + @"\Detailed Results HETS - Azo");
+                Directory.CreateDirectory(Path.GetDirectoryName(zipPath) + @"\Detailed Results HETS - Azo");
 
 
             ActivateGrading();
