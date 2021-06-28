@@ -60,13 +60,13 @@
     <Compile Include="HETS Test Classes\SingleTestCaseTest.cs" />
     <Compile Include="HETS Test Classes\SubmissionsTest.cs" />
     <Compile Include="HETS Test Classes\TestCasesTest.cs" />
-    <Compile Include="HETS Test Classes\OpenFoldesTest.cs" />
     <Compile Include="HETS Test Classes\ZipArchiveHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HETS Test Classes\MainScreenLogicTest.cs" />
     <Compile Include="HETS Test Classes\AUseScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 
-
 namespace HETS1Design
 {
     [TestClass]
@@ -13,6 +12,7 @@ namespace HETS1Design
         #region Many Objects
         TextBox txtArchivePath;
         Button btnBrowseArchive;
+        Button btnBrowserFolder;
         Button btnSaveIO;
         RadioButton radioTNC;
         RadioButton radioTC;
@@ -53,6 +53,7 @@ namespace HETS1Design
             #region Many Inits
             txtArchivePath = new System.Windows.Forms.TextBox();
             btnBrowseArchive = new System.Windows.Forms.Button();
+            btnBrowserFolder = new System.Windows.Forms.Button();
             btnSaveIO = new System.Windows.Forms.Button();
             radioTNC = new System.Windows.Forms.RadioButton();
             radioTC = new System.Windows.Forms.RadioButton();
@@ -237,5 +238,7 @@ namespace HETS1Design
             Assert.IsTrue(btnSaveIO.Enabled);
 
         }
+
+       
     }
 }

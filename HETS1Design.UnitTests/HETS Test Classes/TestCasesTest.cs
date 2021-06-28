@@ -111,16 +111,16 @@ namespace HETS1Design
         {
             /*TestCases.ResetTestCases();*/
             //Arrange
-            var inputFileText = "__[TC]\r\n3 4\r\n__[TC]\r\n35"; 
+            var inputFileText = "__[TC]\r\n3 4\r\n__[TC]\r\n35";
             var outputFileTest = "__[TC]\r\n1";
             var listSize = 2; //Suposedely 2 test cases (but tester forgot to add the output field)
-                              
+
 
             //Assert+Act
-            Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFileText, outputFileTest));
+            var caughtException = Assert.ThrowsException<Exception>(() => TestCases.TestCasesBuilder(inputFileText, outputFileTest));
             Assert.AreNotEqual(listSize, TestCases.testCases.Count);
             Assert.AreEqual(0, TestCases.testCases.Count);
-        }
+        }   
 
         [TestMethod]
         public void CountTestCases_Test()
