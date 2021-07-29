@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace HETS1Design
 {
@@ -34,6 +35,21 @@ namespace HETS1Design
             submittedProgramOutputs = new List<OutputResult>(); //Program output per test case.          
             compiledProgramOutputs = new List<OutputResult>();
             finalGrade = 0;
+        }
+        
+         //check the id
+        static public bool checksubmitID(string submitID)
+        {
+
+            Regex regex = new Regex(@"^\d$");
+            Match match = regex.Match(submitID);
+            if (match.Success)
+            {
+                return true;
+            }
+            else return false;
+
+
         }
 
         //Add the .c code path.
