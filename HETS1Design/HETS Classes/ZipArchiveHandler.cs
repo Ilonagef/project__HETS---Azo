@@ -115,8 +115,8 @@ namespace HETS1Design
 
                 zip.Dispose(); //Dispose once our data is in place.
             }
-            /********************************NEW******************************/
-            else/*Not Zipe file */
+
+            else
             {
                 string dirPath = Path.GetFullPath(zipFile);
                 string folderName = "Code to Check";

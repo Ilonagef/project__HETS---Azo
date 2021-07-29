@@ -148,7 +148,6 @@ namespace HETS1Design
                 {
                     throw new Exception("Test cases number in input and output file is empty !");
                 }
-                /*new FIX by ilona & Abdalla*/
                 else
                 {
                     List<String> input = TestCasesSeparator(inputFileText);
