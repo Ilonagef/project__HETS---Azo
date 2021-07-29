@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 
 namespace HETS1Design
 {
     [TestClass]
     public class SingleSubmissionTest
     {
-        SingleSubmission s1,s2,s3;
+        SingleSubmission s1,s2,s3,s4;
 
 
         [TestInitialize]
@@ -17,6 +18,7 @@ namespace HETS1Design
             s1 = new SingleSubmission("21325");
             s2 = new SingleSubmission("54324");
             s3 = new SingleSubmission("53252");
+            s4 = new SingleSubmission("123456789");
             s2.AddCode(@"..\..\..\Assets\Test Required FIles\SingleSubmissionTest\Source1.c");
             s2.AddExe(@"..\..\..\Assets\Test Required FIles\SingleSubmissionTest\Source1.exe");
 
@@ -29,7 +31,17 @@ namespace HETS1Design
             TestCases.OnAddTestCase(input, output, isTC); // We want the submisstion at least one currect result
         }
 
+        [TestMethod]
+        public void checksubmitID()
+        {
+            Assert.IsNotNull(s1);
+            Assert.IsNotNull(s1.submitID);
 
+            Regex regex = new Regex(@"^[0-9]{9,15}$");
+            Assert.IsFalse(regex.Match(s1.submitID).Success);
+            Assert.IsTrue(regex.Match(s4.submitID).Success);
+
+        }
 
         [TestMethod]
         public void SingleSubmission_Creates()
