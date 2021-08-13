@@ -130,7 +130,7 @@ namespace HETS1Design
             Submissions.ResetSubmissions();
             btnResults.Enabled = false;
             btnDetailedResults.Enabled = false;
-            ZipArchiveHandler.GetSubmissionData(zipFile, true); //Extract submissions data.
+            ZipArchiveHandler.GetSubmissionData(zipFile,true); //Extract submissions data.
 
             }
             catch (Exception ex)
@@ -139,6 +139,27 @@ namespace HETS1Design
                 MessageBox.Show(ex.Message);
             }
         }
+
+        /*בשביל בדיקות אוטומטיות 
+         this function like the function " OpenArchiveFile" above */
+        public static void CmdOpenArchiveFile(OpenFileDialog openArchiveDialog,string txtArchPath,string results,string detalidRes)
+        {
+            try
+            {
+                string zipFile = openArchiveDialog.FileName;
+                txtArchPath = zipFile;
+                Submissions.ResetSubmissions();
+                ZipArchiveHandler.GetSubmissionData(zipFile, true);
+            }
+            catch(Exception ex)
+            {
+                txtArchPath = "";
+                Console.WriteLine("Not good.The file dont extract!!");
+            }
+          
+        }
+
+
         public static void OpenTheDir(CommonOpenFileDialog dialog ,TextBox txtFolderPath,Button btnResults, Button btnDetailedResults)
         {
           try
@@ -157,6 +178,8 @@ namespace HETS1Design
             }
 
         }
+
+
 
         //The small scale guide we have.
         public static void DisplayGuideHelpBox()
@@ -189,6 +212,7 @@ namespace HETS1Design
                 }
             }
 
+
             catch (Exception ex)
             {
                 txtInputPath.Text = "";
@@ -197,6 +221,32 @@ namespace HETS1Design
                 btnAddTestCase.Enabled = false;
                 btnSaveIO.Enabled = false;
             }
+        }
+        /**/
+        public static void CmdOpenInputFile(OpenFileDialog openInputDialog, string txtInputPath,string txtOutputPath,string btnAddTestCase,string btnSaveIO)
+        {
+            string inputFileName = openInputDialog.FileName;
+            txtInputPath = openInputDialog.FileName;
+
+            try
+            {
+                if (txtInputPath != "" && txtOutputPath != "")
+                {
+                    TestCases.ResetTestCases();
+                    TestCases.ExtractTestCasesFromText(txtInputPath, txtOutputPath);
+                    
+                }
+            }
+
+
+            catch (Exception ex)
+            {
+                txtInputPath = "";
+                txtOutputPath = "";
+                MessageBox.Show(ex.Message);
+               
+            }
+
         }
 
         public static void OpenOutputFile(OpenFileDialog openOutputDialog, TextBox txtOutputPath, TextBox txtInputPath, Button btnAddTestCase, Button btnSaveIO)
@@ -224,6 +274,31 @@ namespace HETS1Design
                 btnSaveIO.Enabled = false;
             }
         }
+        /**/
+        public static void CmdOpenOutputFile(OpenFileDialog openOutputDialog ,string txtOutputPath, string txtInputPath,string btnAddTestCase,string btnSaveIO)
+        {
+            string outputTextFile = openOutputDialog.FileName;
+            txtOutputPath = openOutputDialog.FileName;
+
+            try
+            {
+                if (txtInputPath != "" && txtOutputPath != "")
+                {
+                    TestCases.ResetTestCases();
+                    TestCases.ExtractTestCasesFromText(txtInputPath, txtOutputPath);
+                    
+                }
+            }
+
+            catch (Exception ex)
+            {
+                txtInputPath = "";
+                txtOutputPath = "";
+                MessageBox.Show(ex.Message);
+                
+            }
+        }
+        
 
 
 

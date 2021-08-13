@@ -19,6 +19,8 @@ namespace HETS1Design
     [ExcludeFromCodeCoverage]
     public partial class MainScreen : Form
     {
+        
+        
         public MainScreen()
         {
             InitializeComponent();
@@ -39,6 +41,12 @@ namespace HETS1Design
         { 
             MainScreenLogic.CompileHelper(this.btnCompile, this.txtArchivePath, this.txtInputPath, this.txtOutputPath);
         }
+        /*new*/
+       public void CmdCompile(string comp)
+        {
+            MainScreenLogic.CompileHelper(this.btnCompile, this.txtArchivePath, this.txtInputPath, this.txtOutputPath);
+            btnCompile_Click(null, null);
+        }
 
 
         private void btnRunProgram_Click(object sender, EventArgs e)
@@ -46,11 +54,23 @@ namespace HETS1Design
             MainScreenLogic.RunHelper(this.btnRunProgram, this.txtArchivePath, this.txtInputPath, this.txtOutputPath, this.btnResults);
         }
 
+        /**/
+        public void CmdRun(string run)
+        {
+            MainScreenLogic.RunHelper(this.btnRunProgram, this.txtArchivePath, this.txtInputPath, this.txtOutputPath, this.btnResults);
+            btnRunProgram_Click(null, null);
+        }
 
         private void btnResults_Click(object sender, EventArgs e)
         {
             MainScreenLogic.OnShowResults(this.dataGridResults, this.btnDetailedResults);
             
+        }
+
+        public void CmdRes(string res)
+        {
+            MainScreenLogic.OnShowResults(this.dataGridResults, this.btnDetailedResults);
+            btnResults_Click(null, null);
         }
 
         private void btnDetailedResults_Click(object sender, EventArgs e)
@@ -75,6 +95,8 @@ namespace HETS1Design
             MainScreenLogic.PrepareFileDialog("ZIP Archive files (*.zip)|*.zip", openArchiveDialog);
         }
 
+        //public void cmdBrowseArchive(string num1 , string num)
+
         private void btnBrowseInput_Click(object sender, EventArgs e)
         {
             MainScreenLogic.PrepareFileDialog("Text files (*.txt)|*.txt", openInputDialog);
@@ -90,18 +112,37 @@ namespace HETS1Design
             MainScreenLogic.OpenArchiveFile(this.openArchiveDialog, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
         }
 
-
+        /*בשביל בדיקות אוטומטיות
+         This function like openArchiveDialog*/
+       public void CmdOpenArch(string path)
+        {
+            MainScreenLogic.CmdOpenArchiveFile(this.openArchiveDialog, this.txtArchivePath.Text, this.btnResults.Text, this.btnDetailedResults.Text);
+            openArchiveDialog_FileOk(null, null);
+        }
+       
+ 
         private void openInputDialog_FileOk(object sender, CancelEventArgs e)
         {
             MainScreenLogic.OpenInputFile(this.openInputDialog, this.txtInputPath, this.txtOutputPath, this.btnAddTestCase, this.btnSaveIO);
+        }
+        /**/
+        public void CmdOpenInput(string path)
+        {
+            MainScreenLogic.CmdOpenInputFile(this.openInputDialog, this.txtInputPath.Text, this.txtOutputPath.Text, this.btnAddTestCase.Text, this.btnSaveIO.Text);
+            openInputDialog_FileOk(null, null);
         }
 
         private void openOutputDialog_FileOk(object sender, CancelEventArgs e)
         {
             MainScreenLogic.OpenOutputFile(this.openOutputDialog, this.txtOutputPath, this.txtInputPath, this.btnAddTestCase, this.btnSaveIO);
         }
+        /**/
+        public void CmdOpenOutput(string path)
+        {
+            MainScreenLogic.CmdOpenOutputFile(this.openOutputDialog, this.txtOutputPath.Text, this.txtInputPath.Text, this.btnAddTestCase.Text, this.btnSaveIO.Text);
+            openOutputDialog_FileOk(null, null);
 
-
+        }
         private void menuCodeWeight_ValueChanged(object sender, EventArgs e)
         {
             MainScreenLogic.LimitWeightsChange(this.menuCodeWeight, this.menuExeWeight, this.menuResultsWeight);
@@ -165,5 +206,6 @@ namespace HETS1Design
             dialog.ShowDialog();
             MainScreenLogic.OpenTheDir(dialog, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
         }
+      
     }
 }

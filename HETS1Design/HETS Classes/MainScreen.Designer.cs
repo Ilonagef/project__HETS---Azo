@@ -768,9 +768,9 @@ namespace HETS1Design
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddTestCase;
         private System.Windows.Forms.Button btnExportCSV;
-        private System.Windows.Forms.OpenFileDialog openArchiveDialog;
-        private System.Windows.Forms.OpenFileDialog openInputDialog;
-        private System.Windows.Forms.OpenFileDialog openOutputDialog;
+        public System.Windows.Forms.OpenFileDialog openArchiveDialog;
+        public System.Windows.Forms.OpenFileDialog openInputDialog;
+        public System.Windows.Forms.OpenFileDialog openOutputDialog;
         private System.Windows.Forms.SaveFileDialog saveCSVFile;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
