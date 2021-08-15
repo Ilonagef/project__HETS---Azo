@@ -42,10 +42,22 @@ namespace HETS1Design
             MainScreenLogic.CompileHelper(this.btnCompile, this.txtArchivePath, this.txtInputPath, this.txtOutputPath);
         }
         /*new*/
-       public void CmdCompile(string comp)
+        //delegate void CompCallback();
+        public void CmdCompile()
         {
-            MainScreenLogic.CompileHelper(this.btnCompile, this.txtArchivePath, this.txtInputPath, this.txtOutputPath);
-            btnCompile_Click(null, null);
+          
+          if(this.btnCompile.InvokeRequired )
+           {
+                Action comp = delegate { CmdCompile(); };
+                this.Invoke(comp);
+               // CompCallback d = new CompCallback(CmdCompile);
+                //this.Invoke(d , new object[] { });
+           }
+          else
+          {
+                
+                btnCompile_Click(null, null);
+          }  
         }
 
 
@@ -55,27 +67,68 @@ namespace HETS1Design
         }
 
         /**/
-        public void CmdRun(string run)
+        public void CmdRun()
         {
-            MainScreenLogic.RunHelper(this.btnRunProgram, this.txtArchivePath, this.txtInputPath, this.txtOutputPath, this.btnResults);
-            btnRunProgram_Click(null, null);
+            if(this.btnRunProgram.InvokeRequired)
+            {
+                Action run = delegate { CmdRun(); };
+                this.Invoke(run);
+            }
+            else
+            {
+                btnRunProgram_Click(null, null);
+            }
+         
         }
+     
 
         private void btnResults_Click(object sender, EventArgs e)
         {
-            MainScreenLogic.OnShowResults(this.dataGridResults, this.btnDetailedResults);
             
+                btnResults.Enabled = false;
+                MainScreenLogic.OnShowResults(this.dataGridResults, this.btnDetailedResults);
+
+
         }
 
-        public void CmdRes(string res)
+        //בשביל בדיקות אוטומטיות
+        //delegate void ResultsCallback();
+        public void CmdResults()
         {
-            MainScreenLogic.OnShowResults(this.dataGridResults, this.btnDetailedResults);
-            btnResults_Click(null, null);
+            if (this.btnResults.InvokeRequired)
+            {
+                Action resultes = delegate { CmdResults(); };
+                this.Invoke(resultes);
+                //ResultsCallback d = new ResultsCallback(CmdResults);
+                //this.Invoke(d, new object[] { });
+            }
+            else
+            {
+                this.btnResults_Click(null, null);
+
+            }
         }
+
+       
 
         private void btnDetailedResults_Click(object sender, EventArgs e)
         {
             MainScreenLogic.OnSaveDetailedResults(this.txtArchivePath);
+        }
+
+        public void CmdResultsFile()
+        {
+            if(this.btnDetailedResults.InvokeRequired)
+            {
+                Action resFile = delegate { CmdResultsFile(); };
+                this.Invoke(resFile);
+            }
+            else
+            {
+                btnDetailedResults_Click(null, null);
+            }
+            
+
         }
 
         private void btnSaveIO_Click(object sender, EventArgs e)
@@ -114,10 +167,24 @@ namespace HETS1Design
 
         /*בשביל בדיקות אוטומטיות
          This function like openArchiveDialog*/
-       public void CmdOpenArch(string path)
+        delegate void BrowseZIPCallback();
+        public void CmdOpenArch()
         {
-            MainScreenLogic.CmdOpenArchiveFile(this.openArchiveDialog, this.txtArchivePath.Text, this.btnResults.Text, this.btnDetailedResults.Text);
-            openArchiveDialog_FileOk(null, null);
+            if (this.txtArchivePath.InvokeRequired)
+            {
+
+                BrowseZIPCallback d = new BrowseZIPCallback(CmdOpenArch);
+                this.Invoke(d, new object[] { });
+            }
+            else
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                 ofd.FileName = @"D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\New Test_ilonaAbdala\ZipForTest.zip";
+                 MainScreenLogic.OpenArchiveFile(ofd, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
+            }
+            
+
+            
         }
        
  
@@ -126,10 +193,20 @@ namespace HETS1Design
             MainScreenLogic.OpenInputFile(this.openInputDialog, this.txtInputPath, this.txtOutputPath, this.btnAddTestCase, this.btnSaveIO);
         }
         /**/
-        public void CmdOpenInput(string path)
+        public void CmdOpenInput(OpenFileDialog input)
         {
-            MainScreenLogic.CmdOpenInputFile(this.openInputDialog, this.txtInputPath.Text, this.txtOutputPath.Text, this.btnAddTestCase.Text, this.btnSaveIO.Text);
-            openInputDialog_FileOk(null, null);
+           // string pathInput = input.FileName;
+            if(this.txtInputPath.InvokeRequired == true)
+            {
+                this.Invoke(new Action<OpenFileDialog>(CmdOpenInput) , new object[] {input });
+                
+            }
+            else
+            {
+                MainScreenLogic.OpenInputFile(input, this.txtInputPath, this.txtOutputPath, this.btnAddTestCase, this.btnSaveIO);
+            }
+            
+            //openInputDialog_FileOk(null, null);
         }
 
         private void openOutputDialog_FileOk(object sender, CancelEventArgs e)
@@ -137,10 +214,18 @@ namespace HETS1Design
             MainScreenLogic.OpenOutputFile(this.openOutputDialog, this.txtOutputPath, this.txtInputPath, this.btnAddTestCase, this.btnSaveIO);
         }
         /**/
-        public void CmdOpenOutput(string path)
+        public void CmdOpenOutput(OpenFileDialog output)
         {
-            MainScreenLogic.CmdOpenOutputFile(this.openOutputDialog, this.txtOutputPath.Text, this.txtInputPath.Text, this.btnAddTestCase.Text, this.btnSaveIO.Text);
-            openOutputDialog_FileOk(null, null);
+            if (this.txtOutputPath.InvokeRequired == true)
+            {
+                this.Invoke(new Action<OpenFileDialog>(CmdOpenOutput), new object[] { output });
+            }
+            else
+            {
+                MainScreenLogic.OpenOutputFile(output, this.txtOutputPath, this.txtInputPath, this.btnAddTestCase, this.btnSaveIO);
+            }
+           
+            //openOutputDialog_FileOk(null, null);
 
         }
         private void menuCodeWeight_ValueChanged(object sender, EventArgs e)
@@ -183,15 +268,59 @@ namespace HETS1Design
         {
             MainScreenLogic.OnCheckCodeRadioChange(this.btnCompile);
         }
+        public void CmdRadioCode()
+        {
+            if(this.radioBtnExecutable.InvokeRequired)
+            {
+                Action radioCode = delegate { CmdRadioCode(); };
+                this.Invoke(radioCode);
+            }
+            else
+            {
+                Submissions.checkCode = true;
+                Submissions.checkExe = false;
+                btnCompile.Enabled = true;
+            }
+        }
 
         private void radioBtnCode_CheckedChanged(object sender, EventArgs e)
         {
             MainScreenLogic.OnCheckExeRadioChange(this.btnCompile);
         }
 
+        public void CmdRadioExec()
+        {
+            if(this.radioBtnCode.InvokeRequired)
+            {
+                Action radioExec = delegate { CmdRadioExec(); };
+                this.Invoke(radioExec);
+            }
+            else
+            {
+                Submissions.checkCode = false;
+                Submissions.checkExe = true;
+                btnCompile.Enabled = false;
+            }
+        }
+
         private void radioBtnBothExeAndCode_CheckedChanged(object sender, EventArgs e)
         {
             MainScreenLogic.OnCheckBothRadioChange(this.btnCompile);
+        }
+
+        public void CmdRadioBoth()
+        {
+            if(this.radioBtnBothExeAndCode.InvokeRequired)
+            {
+                Action radioBoth = delegate { CmdRadioBoth(); };
+                this.Invoke(radioBoth);
+            }
+            else
+            {
+                Submissions.checkCode = true;
+                Submissions.checkExe = true;
+                btnCompile.Enabled = true;
+            }
         }
 
         private void btnExportCSV_Click(object sender, EventArgs e)
@@ -204,7 +333,57 @@ namespace HETS1Design
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
             dialog.ShowDialog();
-            MainScreenLogic.OpenTheDir(dialog, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
+            MainScreenLogic.OpenFolder(dialog, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
+        }
+        /**/
+        delegate void BrowseFolderCallback();
+        public void CmdOpenFolder()
+        {
+            
+            if (this.txtArchivePath.InvokeRequired)
+            {
+                BrowseFolderCallback d = new BrowseFolderCallback(CmdOpenFolder);
+                this.Invoke(d, new object[] { });
+            }
+            else
+            {
+                
+                string path = @"D:\שנה ג\סמסטר ב\אימות ובדיקת תוכנה\project2_1\Project Code\HETS - Azo\Assets\New Test_ilonaAbdala\OpenFolderTest";
+                MainScreenLogic.CmdOpenFolder(path, this.txtArchivePath, this.btnResults, this.btnDetailedResults);
+            }
+
+
+            
+
+        }
+
+      public void Cmd32Bits()
+      {
+            if(this.radioButton32BitCompiler.InvokeRequired)
+            {
+                Action bits32 = delegate { Cmd32Bits(); };
+                this.Invoke(bits32);
+            }
+            else
+            {
+                this.radioButton32BitCompiler.Checked = true;
+            }
+      }
+
+        public void CmdClose()
+        {
+            if(this.InvokeRequired)
+            {
+                Action close = delegate { CmdClose(); };
+                this.Invoke(close);
+            }
+            else
+            {
+                this.Close();
+            }
+
+
+           
         }
       
     }

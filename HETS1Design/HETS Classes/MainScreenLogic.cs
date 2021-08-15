@@ -81,9 +81,23 @@ namespace HETS1Design
             { 
                 if (Submissions.ActivateCompilation(btnCompile)) //Both compile and check that it finished compiling. (Send button for text updates)
                     btnCompile.Text = "Compile Programs"; //Return to the original text.
+                     
             }
 
 
+        }
+        /*בשביל בדיקות אוטומטיות*/
+        public static bool CmdCompailHelper(Button btnCompile, TextBox txtArchivePath, TextBox txtInputPath, TextBox txtOutputPath)
+        {
+            string validateText = FormValidate(txtArchivePath, txtInputPath, txtOutputPath);
+            if (validateText.CompareTo("OK") != 0)
+                return false;
+            else
+            {
+                if (Submissions.ActivateCompilation(btnCompile)) //Both compile and check that it finished compiling. (Send button for text updates)
+                    btnCompile.Text = "Compile Programs"; //Return to the original text.
+               return true;
+            }
         }
 
         public static void RunHelper(Button btnRunProgram, TextBox txtArchivePath, TextBox txtInputPath, TextBox txtOutputPath, Button btnResults)
@@ -140,27 +154,10 @@ namespace HETS1Design
             }
         }
 
-        /*בשביל בדיקות אוטומטיות 
-         this function like the function " OpenArchiveFile" above */
-        public static void CmdOpenArchiveFile(OpenFileDialog openArchiveDialog,string txtArchPath,string results,string detalidRes)
-        {
-            try
-            {
-                string zipFile = openArchiveDialog.FileName;
-                txtArchPath = zipFile;
-                Submissions.ResetSubmissions();
-                ZipArchiveHandler.GetSubmissionData(zipFile, true);
-            }
-            catch(Exception ex)
-            {
-                txtArchPath = "";
-                Console.WriteLine("Not good.The file dont extract!!");
-            }
-          
-        }
+      
 
 
-        public static void OpenTheDir(CommonOpenFileDialog dialog ,TextBox txtFolderPath,Button btnResults, Button btnDetailedResults)
+        public static void OpenFolder(CommonOpenFileDialog dialog ,TextBox txtFolderPath,Button btnResults, Button btnDetailedResults)
         {
           try
             {
@@ -179,6 +176,25 @@ namespace HETS1Design
 
         }
 
+        /*בשביל בדיקות אוטומטיות*/
+        public static void CmdOpenFolder(string path, TextBox txtFolderPath, Button btnResults, Button btnDetailedResults)
+        {
+            try
+            {
+                string folderf = path;
+                txtFolderPath.Text = folderf;
+                Submissions.ResetSubmissions();
+                btnResults.Enabled = false;
+                btnDetailedResults.Enabled = false;
+                ZipArchiveHandler.GetSubmissionData(folderf, true);
+            }
+            catch (Exception ex)
+            {
+                txtFolderPath.Text = "";
+                MessageBox.Show(ex.Message);
+            }
+
+        }
 
 
         //The small scale guide we have.
@@ -222,32 +238,7 @@ namespace HETS1Design
                 btnSaveIO.Enabled = false;
             }
         }
-        /**/
-        public static void CmdOpenInputFile(OpenFileDialog openInputDialog, string txtInputPath,string txtOutputPath,string btnAddTestCase,string btnSaveIO)
-        {
-            string inputFileName = openInputDialog.FileName;
-            txtInputPath = openInputDialog.FileName;
-
-            try
-            {
-                if (txtInputPath != "" && txtOutputPath != "")
-                {
-                    TestCases.ResetTestCases();
-                    TestCases.ExtractTestCasesFromText(txtInputPath, txtOutputPath);
-                    
-                }
-            }
-
-
-            catch (Exception ex)
-            {
-                txtInputPath = "";
-                txtOutputPath = "";
-                MessageBox.Show(ex.Message);
-               
-            }
-
-        }
+        
 
         public static void OpenOutputFile(OpenFileDialog openOutputDialog, TextBox txtOutputPath, TextBox txtInputPath, Button btnAddTestCase, Button btnSaveIO)
         { 
@@ -274,30 +265,7 @@ namespace HETS1Design
                 btnSaveIO.Enabled = false;
             }
         }
-        /**/
-        public static void CmdOpenOutputFile(OpenFileDialog openOutputDialog ,string txtOutputPath, string txtInputPath,string btnAddTestCase,string btnSaveIO)
-        {
-            string outputTextFile = openOutputDialog.FileName;
-            txtOutputPath = openOutputDialog.FileName;
-
-            try
-            {
-                if (txtInputPath != "" && txtOutputPath != "")
-                {
-                    TestCases.ResetTestCases();
-                    TestCases.ExtractTestCasesFromText(txtInputPath, txtOutputPath);
-                    
-                }
-            }
-
-            catch (Exception ex)
-            {
-                txtInputPath = "";
-                txtOutputPath = "";
-                MessageBox.Show(ex.Message);
-                
-            }
-        }
+       
         
 
 

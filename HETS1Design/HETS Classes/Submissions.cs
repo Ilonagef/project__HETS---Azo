@@ -22,6 +22,10 @@ namespace HETS1Design
         //Activates compilation for all submissions.
         public static bool ActivateCompilation(Button btnCompile)
         {
+            if(btnCompile.InvokeRequired == true)
+            {
+                
+            }
             int currentlyCompiling = 1;
             foreach (SingleSubmission sub in submissions)
             {

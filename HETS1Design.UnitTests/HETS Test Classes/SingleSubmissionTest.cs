@@ -30,7 +30,7 @@ namespace HETS1Design
             TestCases.OnAddTestCase(input, output, isTC); // We want the submisstion at least one currect result
             TestCases.OnAddTestCase(input, output, isTC); // We want the submisstion at least one currect result
         }
-
+        /*new -- Abdalla*/
         [TestMethod]
         public void checksubmitID()
         {

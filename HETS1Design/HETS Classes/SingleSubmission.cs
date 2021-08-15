@@ -37,7 +37,7 @@ namespace HETS1Design
             finalGrade = 0;
         }
         
-         //check the id
+         //check the id-ABDALLA
         static public bool checksubmitID(string submitID)
         {
 
